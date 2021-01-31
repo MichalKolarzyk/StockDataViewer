@@ -63,15 +63,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Dialogs\DialogService.cs" />
+    <Compile Include="Dialogs\DialogViewModelBase.cs" />
+    <Compile Include="Dialogs\DialogWindow.xaml.cs">
+      <DependentUpon>DialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\IDialogService.cs" />
+    <Compile Include="Dialogs\IDialogWindow.cs" />
+    <Compile Include="DialogViewModels\AddCompanyDialogViewModel.cs" />
+    <Compile Include="DialogViews\AddCompanyDialogView.xaml.cs">
+      <DependentUpon>AddCompanyDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="Utilities\ServiceLocator.cs" />
     <Compile Include="Utilities\ServiceModule.cs" />
+    <Compile Include="Utilities\BaseViewModel.cs" />
     <Compile Include="ViewModels\CompanyListViewModel.cs" />
+    <Compile Include="ViewModels\DetailViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MenuBarViewModel.cs" />
     <Compile Include="Views\CompanyListView.xaml.cs">
       <DependentUpon>CompanyListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DetailView.xaml.cs">
+      <DependentUpon>DetailView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuBarView.xaml.cs">
+      <DependentUpon>MenuBarView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -102,14 +123,41 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Dialogs\DialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogViews\AddCompanyDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CompanyListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\MenuBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BaseModels\BaseModels.csproj">
+      <Project>{943F7AC3-AAB3-42F6-B2CC-41DE849A0E65}</Project>
+      <Name>BaseModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{cf042ef4-6fa8-4d24-942d-dc6add966e0b}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,8 +11,17 @@
         WindowState="Maximized"
         Title="Stock Data Viewer" Height="450" Width="800">
 
-    <StackPanel>
-        <TextBlock Text="{Binding Name}"/>
-        <views:CompanyListView/>
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="200"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <views:MenuBarView Grid.ColumnSpan="2"/>
+        <views:CompanyListView Grid.Row="1"/>
+        <views:DetailView Grid.Column="1" Grid.Row="1"/>
+    </Grid>
 </Window>

@@ -20,3 +20,15 @@ C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\UserInterfac
 C:\Users\micha\source\repos\StockDataViewer\UserInterface\bin\Debug\Ninject.dll
 C:\Users\micha\source\repos\StockDataViewer\UserInterface\bin\Debug\Ninject.xml
 C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\App.baml
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\Views\DetailView.g.cs
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\Views\MenuBarView.g.cs
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\Views\DetailView.baml
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\Views\MenuBarView.baml
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\bin\Debug\BaseModels.dll
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\bin\Debug\BaseModels.pdb
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\bin\Debug\Services.dll
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\bin\Debug\Services.pdb
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\Dialogs\DialogWindow.g.cs
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\Dialogs\DialogWindow.baml
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\DialogViews\AddCompanyDialogView.g.cs
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\DialogViews\AddCompanyDialogView.baml

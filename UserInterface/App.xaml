@@ -4,9 +4,46 @@
              xmlns:views ="clr-namespace:UserInterface.Views"
              xmlns:utilities="clr-namespace:UserInterface.Utilities"
              xmlns:viewModels ="clr-namespace:UserInterface.ViewModels"
+             xmlns:dialogViewModels ="clr-namespace:UserInterface.DialogViewModels"
+             xmlns:dialogView="clr-namespace:UserInterface.DialogViews"
              xmlns:local="clr-namespace:UserInterface"
              StartupUri="Views/MainView.xaml">
     <Application.Resources>
         <utilities:ServiceLocator x:Key="ServiceLocator" />
+        
+        <!--Colors-->
+
+        <!--SolidBrush-->
+        <SolidColorBrush x:Key="DarkBackgroundBrush">#2c3e50</SolidColorBrush>
+        <SolidColorBrush x:Key="LightBackgroundBrush">#34495e</SolidColorBrush>
+        <SolidColorBrush x:Key="BorderBrush">#bdc3c7</SolidColorBrush>
+        <SolidColorBrush x:Key="TextBrush">#ecf0f1</SolidColorBrush>
+        
+        <!--Dialogs-->
+        <DataTemplate DataType="{x:Type dialogViewModels:AddCompanyDialogViewModel}">
+            <dialogView:AddCompanyDialogView/>
+        </DataTemplate>
+        
+        <!--Style TextBox-->
+        <Style TargetType="TextBox" x:Key="BasicTextBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="Margin" Value="2"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="2"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        
+        <!--Style TextBlock-->
+        <Style TargetType="TextBlock" x:Key="BasicTextBlock">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+        
     </Application.Resources>
 </Application>

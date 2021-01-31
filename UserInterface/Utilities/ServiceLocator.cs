@@ -26,5 +26,10 @@ namespace UserInterface.Utilities
         {
             get { return kernel.Get<CompanyListViewModel>(); }
         }
+
+        public DetailViewModel DetailViewModel
+        {
+            get { return kernel.Get<DetailViewModel>(); }
+        }
     }
 }
