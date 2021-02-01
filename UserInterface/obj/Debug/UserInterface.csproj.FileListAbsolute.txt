@@ -32,3 +32,9 @@ C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\Dialogs\Dial
 C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\Dialogs\DialogWindow.baml
 C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\DialogViews\AddCompanyDialogView.g.cs
 C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\DialogViews\AddCompanyDialogView.baml
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\DetailViews\CompanyDetailView.g.cs
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\obj\Debug\DetailViews\CompanyDetailView.baml
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\bin\Debug\OxyPlot.dll
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\bin\Debug\OxyPlot.xml
+C:\Users\micha\source\repos\StockDataViewer\UserInterface\bin\Debug\OxyPlot.Wpf.xml

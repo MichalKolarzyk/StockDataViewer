@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\micha\source\repos\StockDataViewer\UserInterface\App.xaml
-6-2143995960
+7-2048005060
 
-23146850403
-172048065468
-Dialogs\DialogWindow.xaml;DialogViews\AddCompanyDialogView.xaml;Views\CompanyListView.xaml;Views\DetailView.xaml;Views\MainView.xaml;Views\MenuBarView.xaml;
+25-1862011626
+21150764776
+DetailViews\CompanyDetailView.xaml;Dialogs\DialogWindow.xaml;DialogViews\AddCompanyDialogView.xaml;Views\CompanyListView.xaml;Views\DetailView.xaml;Views\MainView.xaml;Views\MenuBarView.xaml;
 
 False
 

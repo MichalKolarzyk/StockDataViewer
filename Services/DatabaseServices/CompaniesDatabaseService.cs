@@ -12,9 +12,15 @@ namespace Services.DatabaseServices
         List<Company> _companies;
         public CompaniesDatabaseService()
         {
+            List<Price> prices = new List<Price>()
+            {
+                new Price { Date=DateTime.Now, Value=1},
+                new Price { Date = DateTime.Now, Value = 2 },
+                new Price { Date = DateTime.Now, Value = 3 },
+            };
             _companies = new List<Company>
             {
-                new Company {Id = "APPL", FullName="Apple"},
+                new Company {Id = "APPL", FullName="Apple", Prices = prices},
                 new Company {Id = "KOS", FullName="Kosmos Energy"},
                 new Company {Id = "MORD", FullName="Moderna"}
             };

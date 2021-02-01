@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UserInterface.DetailViewModels;
 using UserInterface.ViewModels;
 
 namespace UserInterface.Utilities
@@ -30,6 +31,11 @@ namespace UserInterface.Utilities
         public DetailViewModel DetailViewModel
         {
             get { return kernel.Get<DetailViewModel>(); }
+        }
+
+        public CompanyDetailViewModel CompanyDetailViewModel
+        {
+            get { return kernel.Get<CompanyDetailViewModel>(); }
         }
     }
 }

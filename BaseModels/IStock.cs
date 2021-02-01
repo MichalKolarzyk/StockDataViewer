@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BaseModels
 {
-    interface IStock
+    public interface IStock
     {
         string Id { get; set; }
-        List<float> Values { get; set; }
+        List<Price> Prices { get; set; }
     }
 }

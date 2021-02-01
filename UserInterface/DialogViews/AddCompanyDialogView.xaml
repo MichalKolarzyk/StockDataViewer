@@ -26,23 +26,28 @@
             <TextBlock Text="Company Id: "
                        Grid.Row="0"
                        Style="{StaticResource BasicTextBlock}"/>
-            <TextBox Text="{Binding Id}"
+        <TextBox Text="{Binding Id}"
                      Grid.Row="0"
                      Grid.Column="1"
                      Style="{StaticResource BasicTextBox}"/>
-
-            <TextBlock Text="Full Name: "
+        <TextBlock Text="Full Name: "
                        Grid.Row="1"
                        Style="{StaticResource BasicTextBlock}"/>
             <TextBox Text="{Binding FullName}" 
                      Grid.Row="1"
                      Grid.Column="1"
                      Style="{StaticResource BasicTextBox}"/>
-        
-        <Button Content="Create"
+
+        <Button
                 Command="{Binding CreateCommand}"
                 CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
-                Grid.Row="9"/>
+                Style="{StaticResource BasicButton}"
+                ToolTip="Create Company"
+                Grid.Row="9">
+            <StackPanel>
+                <Image Source="baseline_create_white_24dp.png"/>
+            </StackPanel>
+        </Button>
     </Grid>
 
 </UserControl>

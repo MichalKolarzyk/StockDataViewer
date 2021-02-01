@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         DataContext="{Binding Path=MainViewModel, Source={StaticResource ServiceLocator}}"
         WindowState="Maximized"
-        Title="Stock Data Viewer" Height="450" Width="800">
+        Title="Stock Data Viewer" Height="800" Width="1200">
 
     <Grid>
         <Grid.RowDefinitions>

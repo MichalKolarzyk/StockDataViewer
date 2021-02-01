@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UserInterface.Utilities;
 
 namespace UserInterface.Dialogs
 {
-    public abstract class DialogViewModelBase<T>
+    public abstract class DialogViewModelBase<T> : BaseViewModel
     {
         public string Title { get; set; }
 

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseModels", "BaseModels\Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{CF042EF4-6FA8-4D24-942D-DC6ADD966E0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAnalyzer", "StockAnalyzer\StockAnalyzer.csproj", "{AB3D1286-763F-453C-AE96-E7292CC1A914}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CF042EF4-6FA8-4D24-942D-DC6ADD966E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF042EF4-6FA8-4D24-942D-DC6ADD966E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF042EF4-6FA8-4D24-942D-DC6ADD966E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3D1286-763F-453C-AE96-E7292CC1A914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3D1286-763F-453C-AE96-E7292CC1A914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3D1286-763F-453C-AE96-E7292CC1A914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3D1286-763F-453C-AE96-E7292CC1A914}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

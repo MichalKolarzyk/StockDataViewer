@@ -6,29 +6,39 @@
              xmlns:viewModels ="clr-namespace:UserInterface.ViewModels"
              xmlns:dialogViewModels ="clr-namespace:UserInterface.DialogViewModels"
              xmlns:dialogView="clr-namespace:UserInterface.DialogViews"
+             xmlns:detailViewModels ="clr-namespace:UserInterface.DetailViewModels"
+             xmlns:detailViews="clr-namespace:UserInterface.DetailViews"
              xmlns:local="clr-namespace:UserInterface"
              StartupUri="Views/MainView.xaml">
     <Application.Resources>
         <utilities:ServiceLocator x:Key="ServiceLocator" />
         
         <!--Colors-->
-
+        <Color x:Key="BorderColor">#bdc3c7</Color>
+        <Color x:Key="TextColor">#ecf0f1</Color>
+        
         <!--SolidBrush-->
         <SolidColorBrush x:Key="DarkBackgroundBrush">#2c3e50</SolidColorBrush>
         <SolidColorBrush x:Key="LightBackgroundBrush">#34495e</SolidColorBrush>
-        <SolidColorBrush x:Key="BorderBrush">#bdc3c7</SolidColorBrush>
-        <SolidColorBrush x:Key="TextBrush">#ecf0f1</SolidColorBrush>
+        <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}"/>
+        <SolidColorBrush x:Key="TextBrush" Color="{StaticResource TextColor}"/>
+
+        <!--DetailViews-->
+        <DataTemplate DataType="{x:Type detailViewModels:CompanyDetailViewModel}">
+            <detailViews:CompanyDetailView/>
+        </DataTemplate>
+        
         
         <!--Dialogs-->
         <DataTemplate DataType="{x:Type dialogViewModels:AddCompanyDialogViewModel}">
             <dialogView:AddCompanyDialogView/>
         </DataTemplate>
         
+        <!--Styles-->
         <!--Style TextBox-->
         <Style TargetType="TextBox" x:Key="BasicTextBox">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
             <Setter Property="MinWidth" Value="100"/>
             <Setter Property="Margin" Value="2"/>
             <Style.Resources>
@@ -45,5 +55,27 @@
             <Setter Property="Margin" Value="2"/>
         </Style>
         
+        <!--Style Button-->
+        <Style TargetType="Button" x:Key="BasicButton">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource BasicButton}" x:Key="ImageButton">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
+        <!--List Box-->
+        <Style TargetType="ListBox" x:Key="BasicListBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
     </Application.Resources>
 </Application>

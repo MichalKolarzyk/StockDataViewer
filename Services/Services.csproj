@@ -46,6 +46,7 @@
     <Compile Include="DatabaseServices\CompaniesDatabaseService.cs" />
     <Compile Include="DatabaseServices\IDatabaseService.cs" />
     <Compile Include="DatabaseServices\ISorceService.cs" />
+    <Compile Include="DatabaseServices\Yahoo\YahooSorceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

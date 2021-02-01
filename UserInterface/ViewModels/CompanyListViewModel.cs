@@ -90,7 +90,8 @@ namespace UserInterface.ViewModels
         }
 
         public Company SelectedCompany 
-        { 
+        {
+            get => (Company)_applicationService.SelectedObject;
             set => _applicationService.SelectedObject = value;
         }
     }

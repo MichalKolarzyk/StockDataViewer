@@ -5,45 +5,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UserInterface.DetailViewModels;
 using UserInterface.Utilities;
 
 namespace UserInterface.ViewModels
 {
     public class DetailViewModel : BaseViewModel
     {
-        private Company _company = new Company();
+
 
         IApplicationService _applicationService;
-        public DetailViewModel(IApplicationService applicationService)
+        CompanyDetailViewModel _companyDetailViewModel;
+        public DetailViewModel(IApplicationService applicationService, 
+            CompanyDetailViewModel companyDetailViewModel)
         {
             _applicationService = applicationService;
             _applicationService.OnSelectedObjectChange += _applicationService_OnSelectedObjectChange;
+
+            _companyDetailViewModel = companyDetailViewModel;
         }
+        
+        public BaseViewModel SelectedViewModel { get; set; }
 
         private void _applicationService_OnSelectedObjectChange(object sender, EventArgs e)
         {
-            if(_applicationService.SelectedObject is Company company)
+            if (_applicationService.SelectedObject is Company)
             {
-                _company = company;
-                OnPropertyChanged(nameof(Id));
-                OnPropertyChanged(nameof(FullName));
+                SelectedViewModel = _companyDetailViewModel;
+                OnPropertyChanged(nameof(SelectedViewModel));
             }
         }
-
-        public string Id
-        {
-            get { return _company.Id; }
-            set 
-            { 
-                _company.Id = value;
-            }
-        }
-
-        public string FullName
-        {
-            get { return _company.FullName; }
-            set { _company.FullName = value; }
-        }
-
     }
 }

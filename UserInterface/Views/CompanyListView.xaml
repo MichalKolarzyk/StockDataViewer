@@ -8,20 +8,45 @@
              Background="{StaticResource LightBackgroundBrush}"
              DataContext="{Binding Path=CompanyListViewModel, Source={StaticResource ServiceLocator}}"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <StackPanel>
-            <ListBox ItemsSource="{Binding Path=Companies}" 
-                 SelectedItem="{Binding Path=SelectedCompany}">
+    <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="outline_search_white_24dp.png"/>
+                <TextBox Style="{StaticResource BasicTextBox}"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1">
+                <ListBox ItemsSource="{Binding Path=Companies}" 
+                         Style="{StaticResource BasicListBox}"
+                     SelectedItem="{Binding Path=SelectedCompany}">
 
-            </ListBox>
-        </StackPanel>
-        <Button Content="Add" Command="{Binding Path=AddCommand}" Grid.Row="1"/>
-        <Button Content="Remove" Command="{Binding Path=RemoveCommand}" Grid.Row="2"/>
-    </Grid>
+                </ListBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+                <Button
+                    Style="{StaticResource ImageButton}"
+                    ToolTip="Add Company"
+                    Command="{Binding Path=AddCommand}">
+                    <StackPanel>
+                        <Image Source="outline_add_white_24dp.png"/>
+                    </StackPanel>
+                </Button>
 
+                <Button
+                    Style="{StaticResource ImageButton }"
+                    ToolTip="Remove Company"
+                    Command="{Binding Path=RemoveCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="baseline_remove_white_24dp.png"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
 </UserControl>

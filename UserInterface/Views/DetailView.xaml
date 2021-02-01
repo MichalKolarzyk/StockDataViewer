@@ -10,37 +10,16 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Id: " 
-                   Grid.Row="0"
-                   Style="{StaticResource BasicTextBlock}"/>
-        <TextBox Text="{Binding Id}" 
-                 Grid.Row="0"
-                 Grid.Column="1"
-                 Style="{StaticResource BasicTextBox}"/>
-
-        <TextBlock Text="Full Name: " 
-                   Grid.Row="1"
-                   Style="{StaticResource BasicTextBlock}"/>
-        <TextBox Text="{Binding FullName}" 
-                 Grid.Row="1"
-                 Grid.Column="1"
-                 Style="{StaticResource BasicTextBox}"/>
+        <ContentControl Grid.Row="1" Grid.Column="1"
+            Content="{Binding SelectedViewModel}"/>
     </Grid>
 </UserControl>

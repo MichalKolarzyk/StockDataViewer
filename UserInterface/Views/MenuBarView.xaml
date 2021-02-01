@@ -6,8 +6,17 @@
              xmlns:local="clr-namespace:UserInterface.Views"
              mc:Ignorable="d" 
              Background="{StaticResource DarkBackgroundBrush}"
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="650" d:DesignWidth="800">
+    <StackPanel Orientation="Horizontal">
+        <Button Style="{StaticResource ImageButton}">
+            <StackPanel>
+                <Image Source="outline_settings_white_24dp.png"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource ImageButton}">
+            <StackPanel>
+                <Image Source="outline_storage_white_24dp.png"/>
+            </StackPanel>
+        </Button>
+    </StackPanel>
 </UserControl>

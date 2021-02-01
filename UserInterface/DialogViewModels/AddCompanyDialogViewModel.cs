@@ -16,7 +16,11 @@ namespace UserInterface.DialogViewModels
         public string Id
         {
             get { return _company.Id; }
-            set { _company.Id = value; }
+            set 
+            { 
+                _company.Id = value;
+                OnPropertyChanged(nameof(CanCreate));
+            }
         }
         public string FullName
         {
@@ -30,10 +34,17 @@ namespace UserInterface.DialogViewModels
         {
             get 
             {
-                if (_createCommand == null) _createCommand = new RelayCommand(Create);
+                if (_createCommand == null) _createCommand = new RelayCommand(Create, CanCreate);
                 return _createCommand; 
             }
         }
+
+        private bool CanCreate(object arg)
+        {
+            if (string.IsNullOrEmpty(Id)) return false;
+            return true;
+        }
+
         private void Create(object obj)
         {
             CloseDialogWithResult((IDialogWindow)obj, _company);

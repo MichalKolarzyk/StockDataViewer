@@ -10,7 +10,7 @@ namespace BaseModels
     {
         public string Id { get; set; }
         public string FullName { get; set; }
-        public List<float> Values { get; set; }
+        public List<Price> Prices { get; set; } = new List<Price>();
 
 
         public override string ToString()
