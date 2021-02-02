@@ -208,9 +208,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DialogViews\baseline_create_white_24dp.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Views\outline_settings_white_24dp.png" />
   </ItemGroup>
   <ItemGroup>

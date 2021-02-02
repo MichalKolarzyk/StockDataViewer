@@ -22,6 +22,10 @@
         <SolidColorBrush x:Key="LightBackgroundBrush">#34495e</SolidColorBrush>
         <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}"/>
         <SolidColorBrush x:Key="TextBrush" Color="{StaticResource TextColor}"/>
+        
+        <!--Images-->
+        <BitmapImage  x:Key="SearchX1" UriSource="Icons/search-white-24dp/1x/outline_search_white_24dp.png"/>
+        <BitmapImage  x:Key="CreateX2" UriSource="Icons/create-white-24dp/2x/baseline_create_white_24dp.png"/>
 
         <!--DetailViews-->
         <DataTemplate DataType="{x:Type detailViewModels:CompanyDetailViewModel}">

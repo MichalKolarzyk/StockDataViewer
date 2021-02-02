@@ -45,7 +45,7 @@
                 ToolTip="Create Company"
                 Grid.Row="9">
             <StackPanel>
-                <Image Source="baseline_create_white_24dp.png"/>
+                <Image Source="{DynamicResource CreateX2}"/>
             </StackPanel>
         </Button>
     </Grid>
