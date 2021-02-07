@@ -180,9 +180,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\outline_add_white_24dp.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\BaseModels\BaseModels.csproj">
       <Project>{943F7AC3-AAB3-42F6-B2CC-41DE849A0E65}</Project>
       <Name>BaseModels</Name>
@@ -191,9 +188,6 @@
       <Project>{cf042ef4-6fa8-4d24-942d-dc6add966e0b}</Project>
       <Name>Services</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\baseline_remove_white_24dp.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -208,25 +202,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\outline_settings_white_24dp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\outline_storage_white_24dp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Icons\add-white-24dp\1x\outline_add_white_24dp.png" />
-    <Resource Include="Views\Icons\add-white-24dp\2x\outline_add_white_24dp.png" />
-    <Resource Include="Views\Icons\create-white-24dp\1x\baseline_create_white_24dp.png" />
-    <Resource Include="Views\Icons\create-white-24dp\2x\baseline_create_white_24dp.png" />
-    <Resource Include="Views\Icons\remove-white-24dp\1x\baseline_remove_white_24dp.png" />
-    <Resource Include="Views\Icons\remove-white-24dp\2x\baseline_remove_white_24dp.png" />
-    <Resource Include="Views\Icons\settings-white-24dp\1x\outline_settings_white_24dp.png" />
-    <Resource Include="Views\Icons\settings-white-24dp\2x\outline_settings_white_24dp.png" />
-    <Resource Include="Views\Icons\storage-white-24dp\1x\outline_storage_white_24dp.png" />
-    <Resource Include="Views\Icons\storage-white-24dp\2x\outline_storage_white_24dp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\outline_search_white_24dp.png" />
+    <Resource Include="Icons\add-white-24dp\1x\outline_add_white_24dp.png" />
+    <Resource Include="Icons\add-white-24dp\2x\outline_add_white_24dp.png" />
+    <Resource Include="Icons\create-white-24dp\1x\baseline_create_white_24dp.png" />
+    <Resource Include="Icons\create-white-24dp\2x\baseline_create_white_24dp.png" />
+    <Resource Include="Icons\remove-white-24dp\1x\baseline_remove_white_24dp.png" />
+    <Resource Include="Icons\remove-white-24dp\2x\baseline_remove_white_24dp.png" />
+    <Resource Include="Icons\search-white-24dp\1x\outline_search_white_24dp.png" />
+    <Resource Include="Icons\search-white-24dp\2x\outline_search_white_24dp.png" />
+    <Resource Include="Icons\settings-white-24dp\1x\outline_settings_white_24dp.png" />
+    <Resource Include="Icons\settings-white-24dp\2x\outline_settings_white_24dp.png" />
+    <Resource Include="Icons\storage-white-24dp\1x\outline_storage_white_24dp.png" />
+    <Resource Include="Icons\storage-white-24dp\2x\outline_storage_white_24dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

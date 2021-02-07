@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Services.DatabaseServices
 {
-    public interface ISorceService<T>
+    public interface IDataChecker<T>
     {
-        Task<IEnumerable<T>> GetAll();
-        Task<T> Get(string id);
+        Task<bool> ExistAsync(T obj);
+        bool Exist(T obj);
     }
 }

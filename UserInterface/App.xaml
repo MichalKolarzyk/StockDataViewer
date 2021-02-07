@@ -24,8 +24,14 @@
         <SolidColorBrush x:Key="TextBrush" Color="{StaticResource TextColor}"/>
         
         <!--Images-->
-        <BitmapImage  x:Key="SearchX1" UriSource="Icons/search-white-24dp/1x/outline_search_white_24dp.png"/>
-        <BitmapImage  x:Key="CreateX2" UriSource="Icons/create-white-24dp/2x/baseline_create_white_24dp.png"/>
+        <BitmapImage  x:Key="SearchX2" UriSource="/Icons/search-white-24dp/2x/outline_search_white_24dp.png"/>
+        <BitmapImage  x:Key="SearchX1" UriSource="/Icons/search-white-24dp/1x/outline_search_white_24dp.png"/>
+        <BitmapImage  x:Key="CreateX2" UriSource="/Icons/create-white-24dp/2x/baseline_create_white_24dp.png"/>
+        <BitmapImage  x:Key="CreateX1" UriSource="/Icons/create-white-24dp/1x/baseline_create_white_24dp.png"/>
+        <BitmapImage  x:Key="AddX2" UriSource="/Icons/add-white-24dp/2x/outline_add_white_24dp.png"/>
+        <BitmapImage  x:Key="RemoveX2" UriSource="/Icons/remove-white-24dp/2x/baseline_remove_white_24dp.png"/>
+        <BitmapImage  x:Key="SettingsX2" UriSource="/Icons/settings-white-24dp/2x/outline_settings_white_24dp.png"/>
+        <BitmapImage  x:Key="StorageX2" UriSource="/Icons/storage-white-24dp/2x/outline_storage_white_24dp.png"/>
 
         <!--DetailViews-->
         <DataTemplate DataType="{x:Type detailViewModels:CompanyDetailViewModel}">
@@ -64,8 +70,8 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
             <Style.Triggers>
-                <Trigger Property="IsEnabled" Value="True">
-                    <Setter Property="Background" Value="Transparent"/>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="Green"/>
                 </Trigger>
             </Style.Triggers>
         </Style>

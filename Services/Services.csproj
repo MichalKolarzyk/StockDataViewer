@@ -84,8 +84,10 @@
     <Compile Include="ApplicationServices\IApplicationService.cs" />
     <Compile Include="DatabaseServices\CompaniesDatabaseService.cs" />
     <Compile Include="DatabaseServices\IDatabaseService.cs" />
+    <Compile Include="DatabaseServices\IDataChecker.cs" />
     <Compile Include="DatabaseServices\ISorceService.cs" />
-    <Compile Include="DatabaseServices\Yahoo\YahooSorceService.cs" />
+    <Compile Include="DatabaseServices\YahooDataChecker.cs" />
+    <Compile Include="DatabaseServices\YahooSorceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShedulerServices\BaseJob.cs" />
     <Compile Include="ShedulerServices\IScheduleService.cs" />
@@ -98,7 +100,9 @@
       <Name>BaseModels</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="SettingService\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

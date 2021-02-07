@@ -34,6 +34,11 @@ namespace Services.DatabaseServices
             OnDatabaseChange?.Invoke(this, null);
         }
 
+        public async Task<Company> Get(string id)
+        {
+            return await Task.Run(()=>_companies.Find(c => c.Id == id));
+        }
+
         public void Remove(Company obj)
         {
             _companies.Remove(obj);

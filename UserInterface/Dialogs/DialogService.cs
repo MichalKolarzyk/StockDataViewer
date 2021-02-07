@@ -12,9 +12,15 @@ namespace UserInterface.Dialogs
         public T OpenDialog<T>(DialogViewModelBase<T> viewModel)
         {
             _window = new DialogWindow();
+            _window.Height = viewModel.Height;
+            _window.Width = viewModel.Width;
             _window.DataContext = viewModel ?? throw new ArgumentNullException(nameof(viewModel));
-            _window.ShowDialog();
-            return viewModel.DialogResult;
+            bool? result = _window.ShowDialog();
+            if(result == true)
+            {
+                return viewModel.DialogResult;
+            }
+            return default;
         }
     }
 }

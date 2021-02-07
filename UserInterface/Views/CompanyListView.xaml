@@ -11,15 +11,15 @@
     <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="22.5"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Grid.Row="0">
-                <Image Source="outline_search_white_24dp.png"/>
+            <DockPanel Grid.Row="0">
+                <Image Source="{StaticResource SearchX1}"/>
                 <TextBox Style="{StaticResource BasicTextBox}"/>
-            </StackPanel>
+            </DockPanel>
             
             <StackPanel Grid.Row="1">
                 <ListBox ItemsSource="{Binding Path=Companies}" 
@@ -34,7 +34,7 @@
                     ToolTip="Add Company"
                     Command="{Binding Path=AddCommand}">
                     <StackPanel>
-                        <Image Source="outline_add_white_24dp.png"/>
+                        <Image Source="{StaticResource AddX2}"/>
                     </StackPanel>
                 </Button>
 
@@ -43,7 +43,7 @@
                     ToolTip="Remove Company"
                     Command="{Binding Path=RemoveCommand}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="baseline_remove_white_24dp.png"/>
+                        <Image Source="{StaticResource RemoveX2}"/>
                     </StackPanel>
                 </Button>
             </StackPanel>

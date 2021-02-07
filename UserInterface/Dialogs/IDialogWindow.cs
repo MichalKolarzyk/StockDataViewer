@@ -8,20 +8,10 @@ namespace UserInterface.Dialogs
 {
     public interface IDialogWindow
     {
-        /// <summary>
-        /// Gets or sets the dialog result value, which is the value returned from <see cref="ShowDialog"/> method.
-        /// </summary>
         bool? DialogResult { get; set; }
-
-        /// <summary>
-        /// Gets or sets the data context for an element when it participates in data binding.
-        /// </summary>
         object DataContext { get; set; }
-
-        /// <summary>
-        /// Opens a window and returns only when the newly opened window is closed.
-        /// </summary>
-        /// <returns>returns <see cref="DialogResult"/></returns>
         bool? ShowDialog();
+        double Height { get; set; }
+        double Width { get; set; }
     }
 }

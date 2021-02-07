@@ -31,12 +31,17 @@ namespace UserInterface.ViewModels
             _addCompanyDialogViewModel = addCompanyDialogViewModel;
 
             _companyDatabaseService = companyDatabaseService;
-            _companyDatabaseService.OnDatabaseChange += UpdateCompanies;
+            _companyDatabaseService.OnDatabaseChange += UpdateCompanies_Event;
 
-            Companies = new ObservableCollection<Company>(_companyDatabaseService.GetAll().Result);
+            UpdateCompanies();
         }
 
-        private void UpdateCompanies(object sender, EventArgs e)
+        private void UpdateCompanies_Event(object sender, EventArgs e)
+        {
+            UpdateCompanies();
+        }
+
+        private void UpdateCompanies()
         {
             Companies = new ObservableCollection<Company>(_companyDatabaseService.GetAll().Result);
         }

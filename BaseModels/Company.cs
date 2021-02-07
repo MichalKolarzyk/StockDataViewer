@@ -10,8 +10,15 @@ namespace BaseModels
     {
         public string Id { get; set; }
         public string FullName { get; set; }
-        public List<Price> Prices { get; set; } = new List<Price>();
+        public float RegularMarketPrice {
+            get 
+            {
+                if (Prices.Count == 0) return default;
+                return Prices[0].Value;
+            } 
+        }
         public float MarketCup { get; set; }
+        public List<Price> Prices { get; set; } = new List<Price>();
 
 
         public override string ToString()

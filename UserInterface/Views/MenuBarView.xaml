@@ -12,12 +12,12 @@
         <Button Style="{StaticResource ImageButton}"
                 Command="{Binding Path=SettingsCommand}">
             <StackPanel>
-                <Image Source="outline_settings_white_24dp.png"/>
+                <Image Source="{StaticResource SettingsX2}"/>
             </StackPanel>
         </Button>
         <Button Style="{StaticResource ImageButton}">
             <StackPanel>
-                <Image Source="outline_storage_white_24dp.png"/>
+                <Image Source="{StaticResource StorageX2}"/>
             </StackPanel>
         </Button>
     </StackPanel>

@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Background="{StaticResource LightBackgroundBrush}"
         WindowStyle="ToolWindow"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Title="DialogWindow" Height="300" Width="500">
+        Title="{Binding Title}" Height="{Binding Height}" Width="{Binding Width}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>

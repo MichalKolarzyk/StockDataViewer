@@ -13,8 +13,6 @@ namespace UserInterface.DetailViewModels
 {
     public class CompanyDetailViewModel : BaseViewModel
     {
-
-
         IApplicationService _applicationService;
         public CompanyDetailViewModel(IApplicationService applicationService)
         {
@@ -27,7 +25,7 @@ namespace UserInterface.DetailViewModels
             if (_applicationService.SelectedObject is Company company)
             {
                 _company = company;
-                Prices = new ObservableCollection<float>(company.Prices.GetValues());
+                Prices = new ObservableCollection<Price>(_company.Prices);
                 OnPropertyChanged(nameof(Id));
                 OnPropertyChanged(nameof(FullName));
                 OnPropertyChanged(nameof(Prices));
@@ -51,17 +49,18 @@ namespace UserInterface.DetailViewModels
             set 
             {
                 _company.FullName = value; 
-                OnPropertyChanged(nameof(Id));
+                OnPropertyChanged(nameof(FullName));
             }
         }
 
-        private ObservableCollection<float> _prices;
-        public ObservableCollection<float> Prices
+        private ObservableCollection<Price> _prices;
+        public ObservableCollection<Price> Prices
         {
             get { return _prices; }
             set 
             { 
                 _prices = value;
+                OnPropertyChanged(nameof(Prices));
             }
         }
 
