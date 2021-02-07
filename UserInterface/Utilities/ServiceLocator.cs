@@ -37,5 +37,10 @@ namespace UserInterface.Utilities
         {
             get { return kernel.Get<CompanyDetailViewModel>(); }
         }
+
+        public MenuBarViewModel MenuBarViewModel
+        {
+            get { return kernel.Get<MenuBarViewModel>(); }
+        }
     }
 }

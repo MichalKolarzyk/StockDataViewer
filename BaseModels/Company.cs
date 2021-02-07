@@ -11,6 +11,7 @@ namespace BaseModels
         public string Id { get; set; }
         public string FullName { get; set; }
         public List<Price> Prices { get; set; } = new List<Price>();
+        public float MarketCup { get; set; }
 
 
         public override string ToString()

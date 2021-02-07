@@ -39,7 +39,8 @@ namespace Services.DatabaseServices
             _companies.Remove(obj);
             OnDatabaseChange?.Invoke(this, null);
         }
-        public IEnumerable<Company> GetAll()
+
+        async Task<IEnumerable<Company>> ISorceService<Company>.GetAll()
         {
             return _companies;
         }

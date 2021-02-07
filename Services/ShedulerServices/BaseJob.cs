@@ -9,9 +9,15 @@ namespace Services.ShedulerServices
 {
     public class BaseJob : IJob
     {
-        public Task Execute(IJobExecutionContext context)
+        public async Task Execute(IJobExecutionContext context)
         {
-            throw new NotImplementedException();
+            foreach (var job in context.JobDetail.JobDataMap.Values)
+            {
+                if (job is Action action)
+                {
+                    await Task.Run(() => action.Invoke());
+                }
+            }
         }
     }
 }

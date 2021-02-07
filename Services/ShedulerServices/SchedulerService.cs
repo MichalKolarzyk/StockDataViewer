@@ -12,17 +12,25 @@ namespace Services.ShedulerServices
     {
         StdSchedulerFactory factory = new StdSchedulerFactory();
         IScheduler _scheduler;
-        Dictionary<Action, ITrigger> _tasks;
 
+        public void ScheduleJob(Action action, string quartzExpression)
+        {
+            ITrigger trigger = QuartzTriggersFactory.Create(quartzExpression);
+            JobDataMap jobDataMap = new JobDataMap();
+            jobDataMap.Add(jobDataMap.Count.ToString(), action);
+            IJobDetail jobDetail = JobBuilder.Create<BaseJob>().UsingJobData(jobDataMap).Build();
+            _scheduler.ScheduleJob(jobDetail, trigger);
+        }
 
         public async Task Start()
         {
-            JobBuilder.Create<BaseJob>().SetJobData(new JobDataMap());
+            if (_scheduler == null) _scheduler = await factory.GetScheduler();
+            await _scheduler.Start();
         }
 
         public async Task Stop()
         {
-            throw new NotImplementedException();
+            await _scheduler.Shutdown();
         }
     }
 }

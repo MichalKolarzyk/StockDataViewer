@@ -31,8 +31,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.7.1.1\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl, Version=2.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.2.5.2\lib\net45\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.Http.2.1.0\lib\net45\Flurl.Http.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Quartz, Version=3.2.4.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
       <HintPath>..\packages\Quartz.3.2.4\lib\net461\Quartz.dll</HintPath>
@@ -63,6 +75,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="YahooFinanceApi, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YahooFinanceApi.2.1.2\lib\netstandard2.0\YahooFinanceApi.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationServices\ApplicationService.cs" />
@@ -75,6 +90,7 @@
     <Compile Include="ShedulerServices\BaseJob.cs" />
     <Compile Include="ShedulerServices\IScheduleService.cs" />
     <Compile Include="ShedulerServices\SchedulerService.cs" />
+    <Compile Include="ShedulerServices\Triggers\QuartzTriggersFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BaseModels\BaseModels.csproj">
@@ -82,9 +98,7 @@
       <Name>BaseModels</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ShedulerServices\Triggers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

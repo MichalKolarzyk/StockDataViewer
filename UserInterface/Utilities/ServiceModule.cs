@@ -2,6 +2,7 @@
 using Ninject.Modules;
 using Services.ApplicationServices;
 using Services.DatabaseServices;
+using Services.ShedulerServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace UserInterface.Utilities
             Bind<IDatabaseService<Company>>().To<CompaniesDatabaseService>();
             Bind<IApplicationService>().To<ApplicationService>().InSingletonScope();
             Bind<IDialogService>().To<DialogService>();
+            Bind<IScheduleService>().To<SchedulerService>();
         }
     }
 }

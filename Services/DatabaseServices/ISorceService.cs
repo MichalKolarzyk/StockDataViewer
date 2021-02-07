@@ -8,6 +8,6 @@ namespace Services.DatabaseServices
 {
     public interface ISorceService<T>
     {
-        IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAll();
     }
 }

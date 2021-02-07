@@ -12,8 +12,6 @@ namespace UserInterface.ViewModels
 {
     public class DetailViewModel : BaseViewModel
     {
-
-
         IApplicationService _applicationService;
         CompanyDetailViewModel _companyDetailViewModel;
         public DetailViewModel(IApplicationService applicationService, 

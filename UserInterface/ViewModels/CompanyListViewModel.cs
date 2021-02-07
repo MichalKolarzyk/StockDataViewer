@@ -33,12 +33,12 @@ namespace UserInterface.ViewModels
             _companyDatabaseService = companyDatabaseService;
             _companyDatabaseService.OnDatabaseChange += UpdateCompanies;
 
-            Companies = new ObservableCollection<Company>(_companyDatabaseService.GetAll());
+            Companies = new ObservableCollection<Company>(_companyDatabaseService.GetAll().Result);
         }
 
         private void UpdateCompanies(object sender, EventArgs e)
         {
-            Companies = new ObservableCollection<Company>(_companyDatabaseService.GetAll());
+            Companies = new ObservableCollection<Company>(_companyDatabaseService.GetAll().Result);
         }
 
         private ObservableCollection<Company> _companies;
