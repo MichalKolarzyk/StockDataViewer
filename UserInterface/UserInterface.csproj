@@ -215,5 +215,8 @@
     <Resource Include="Icons\storage-white-24dp\1x\outline_storage_white_24dp.png" />
     <Resource Include="Icons\storage-white-24dp\2x\outline_storage_white_24dp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\UI.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
