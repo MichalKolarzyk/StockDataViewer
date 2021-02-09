@@ -10,4 +10,4 @@
  ToDo:
  https://trello.com/b/3j90SMqM/stockdataviewer
  
- ![plot](./UserInterface/Icons/remove-white-24dp//2x/baseline_remove_white_24dp.png)
+ ![plot](./UserInterface/Icons/UI.png)
