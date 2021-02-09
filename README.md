@@ -10,4 +10,5 @@
  ToDo:
  https://trello.com/b/3j90SMqM/stockdataviewer
  
+ Present view of UI:
  ![plot](./UserInterface/Icons/UI.png)
