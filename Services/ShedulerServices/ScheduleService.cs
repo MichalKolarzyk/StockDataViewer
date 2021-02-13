@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Services.ShedulerServices
 {
-    public class SchedulerService : IScheduleService
+    public class ScheduleService : IScheduleService
     {
         StdSchedulerFactory factory = new StdSchedulerFactory();
         IScheduler _scheduler;

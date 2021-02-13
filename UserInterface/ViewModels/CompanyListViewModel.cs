@@ -1,6 +1,6 @@
 ﻿using BaseModels;
 using Services.ApplicationServices;
-using Services.DatabaseServices;
+using Services.DataService;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,13 +16,13 @@ namespace UserInterface.ViewModels
 {
     public class CompanyListViewModel : BaseViewModel
     {
-        IDatabaseService<Company> _companyDatabaseService;
         IApplicationService _applicationService;
         IDialogService _dialogService;
+        IDataService _dataService;
         AddCompanyDialogViewModel _addCompanyDialogViewModel;
         public CompanyListViewModel(
-            IDatabaseService<Company> companyDatabaseService, 
             IDialogService dialogService,
+            IDataService dataService,
             IApplicationService applicationService,
             AddCompanyDialogViewModel addCompanyDialogViewModel)
         {
@@ -30,20 +30,14 @@ namespace UserInterface.ViewModels
             _dialogService = dialogService;
             _addCompanyDialogViewModel = addCompanyDialogViewModel;
 
-            _companyDatabaseService = companyDatabaseService;
-            _companyDatabaseService.OnDatabaseChange += UpdateCompanies_Event;
+            _dataService = dataService;
 
-            UpdateCompanies();
-        }
-
-        private void UpdateCompanies_Event(object sender, EventArgs e)
-        {
             UpdateCompanies();
         }
 
         private void UpdateCompanies()
         {
-            Companies = new ObservableCollection<Company>(_companyDatabaseService.GetAll().Result);
+            Companies = new ObservableCollection<Company>(_dataService.GetAll<Company>());
         }
 
         private ObservableCollection<Company> _companies;
@@ -72,7 +66,7 @@ namespace UserInterface.ViewModels
             Company company = _dialogService.OpenDialog(_addCompanyDialogViewModel);
             if(company != null)
             {
-                _companyDatabaseService.Add(company);
+                _dataService.Add(company);
             }
         }
 
@@ -90,7 +84,7 @@ namespace UserInterface.ViewModels
         {
             if(_applicationService.SelectedObject is Company company)
             {
-                _companyDatabaseService.Remove(company);
+                _dataService.Remove(company);
             }
         }
 

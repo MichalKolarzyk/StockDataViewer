@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BaseModels
 {
-    public class Price
+    public class Price : IPrice
     {
         public float Value { get; set; }
         public DateTime Date { get; set; }

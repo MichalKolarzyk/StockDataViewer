@@ -82,16 +82,21 @@
   <ItemGroup>
     <Compile Include="ApplicationServices\ApplicationService.cs" />
     <Compile Include="ApplicationServices\IApplicationService.cs" />
-    <Compile Include="DatabaseServices\CompaniesDatabaseService.cs" />
-    <Compile Include="DatabaseServices\IDatabaseService.cs" />
-    <Compile Include="DatabaseServices\IDataChecker.cs" />
-    <Compile Include="DatabaseServices\ISorceService.cs" />
-    <Compile Include="DatabaseServices\YahooDataChecker.cs" />
-    <Compile Include="DatabaseServices\YahooSorceService.cs" />
+    <Compile Include="DataService\DataAccess\CompanyDataAccess.cs" />
+    <Compile Include="DataService\DataAccess\DataAccessFactory.cs" />
+    <Compile Include="DataService\DataAccess\IDataAccess.cs" />
+    <Compile Include="DataService\ISourceService.cs" />
+    <Compile Include="DataService\SourceAccess\BaseSourceAccess.cs" />
+    <Compile Include="DataService\SourceAccess\ISourceAccess.cs" />
+    <Compile Include="DataService\DataService.cs" />
+    <Compile Include="DataService\IDataService.cs" />
+    <Compile Include="DataService\SourceAccess\CompanySourceAccess.cs" />
+    <Compile Include="DataService\SourceAccess\SourceAccessFactory.cs" />
+    <Compile Include="DataService\SourceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShedulerServices\BaseJob.cs" />
     <Compile Include="ShedulerServices\IScheduleService.cs" />
-    <Compile Include="ShedulerServices\SchedulerService.cs" />
+    <Compile Include="ShedulerServices\ScheduleService.cs" />
     <Compile Include="ShedulerServices\Triggers\QuartzTriggersFactory.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -100,9 +105,7 @@
       <Name>BaseModels</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SettingService\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

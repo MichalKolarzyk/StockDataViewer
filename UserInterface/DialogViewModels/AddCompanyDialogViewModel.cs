@@ -1,7 +1,8 @@
 ﻿using BaseModels;
-using Services.DatabaseServices;
+using Services.DataService;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,39 +15,21 @@ namespace UserInterface.DialogViewModels
     public class AddCompanyDialogViewModel : DialogViewModelBase<Company>
     {
         Company _company = new Company();
-        ISorceService<Company> _dataSource;
-        public AddCompanyDialogViewModel(ISorceService<Company> dataSource)
+        ISourceService _sourceService;
+        public AddCompanyDialogViewModel(ISourceService sourceService)
         {
-            _dataSource = dataSource;
+            _sourceService = sourceService;
         }
+
         public string Id
         {
             get { return _company.Id; }
-            set 
-            { 
+            set
+            {
                 _company.Id = value;
-                UpdateCompany();
-
+                OnPropertyChanged(Id);
+                UpdateCompany(Id);
             }
-        }
-
-        private void UpdateCompany()
-        {
-            Company dataCheckerResult = _dataSource.Get(Id).Result;
-            if(dataCheckerResult != null)
-            {
-                FullName = dataCheckerResult.FullName;
-                MarketCup = dataCheckerResult.MarketCup;
-                _company.Prices = dataCheckerResult.Prices;
-            }
-            else
-            {
-                FullName = "";
-                MarketCup = default;
-                _company.Prices = new List<Price>();
-            }
-            OnPropertyChanged(nameof(RegularMarketPrice));
-            OnPropertyChanged(Id);
         }
 
         public string FullName
@@ -58,14 +41,7 @@ namespace UserInterface.DialogViewModels
             }
         }
 
-        public float RegularMarketPrice
-        {
-            get { return _company.RegularMarketPrice; }
-            set
-            {
-                OnPropertyChanged(nameof(RegularMarketPrice));
-            }
-        }
+        public float RegularMarketPrice => _company.RegularMarketPrice;
 
         public float MarketCup
         {
@@ -76,8 +52,34 @@ namespace UserInterface.DialogViewModels
                 OnPropertyChanged(nameof(MarketCup));
             }
         }
+        public ObservableCollection<Price> Prices
+        {
+            get { return new ObservableCollection<Price>(_company.Prices); }
+            set { 
+                _company.Prices = value.ToList();
+                OnPropertyChanged(nameof(Prices));
+                OnPropertyChanged(nameof(RegularMarketPrice));
+            }
+        }
 
+        private void UpdateCompany(string id)
+        {
+            Company result = _sourceService.Get<Company>(id);
+            if (result != null)
+            {
+                FullName = result.FullName;
+                MarketCup = result.MarketCup;
+                Prices = new ObservableCollection<Price>(result.Prices);
+            }
+            else
+            {
+                FullName = "";
+                MarketCup = default;
+                Prices = new ObservableCollection<Price>();
+            }
+        }
 
+        #region CreateCommand
         private ICommand _createCommand;
         public ICommand CreateCommand
         {
@@ -90,8 +92,8 @@ namespace UserInterface.DialogViewModels
 
         private bool CanCreate(object arg)
         {
-            if (string.IsNullOrEmpty(Id) == true) return false;
-            if (string.IsNullOrEmpty(FullName) == true) return false;
+            if (string.IsNullOrEmpty(Id)) return false;
+            //if (string.IsNullOrEmpty(FullName)) return false;
             return true;
         }
 
@@ -99,5 +101,6 @@ namespace UserInterface.DialogViewModels
         {
             CloseDialogWithResult((IDialogWindow)obj, _company);
         }
+        #endregion
     }
 }

@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Services.DataService.SourceAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.DatabaseServices
+namespace Services.DataService.DataAccess
 {
-    public interface IDatabaseService<T> : ISorceService<T>
+    public interface IDataAccess<T> : ISourceAccess<T>
     {
-        event EventHandler OnDatabaseChange;
         void Add(T obj);
         void Remove(T obj);
     }
