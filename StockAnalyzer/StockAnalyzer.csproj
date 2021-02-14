@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IStockAlgorithm.cs" />
+    <Compile Include="StockAlgorithms\EnumStockAlgorithms.cs" />
+    <Compile Include="StockAlgorithms\IStockAlgorithm.cs" />
     <Compile Include="IStockAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockAlgorithmFactory.cs" />
     <Compile Include="StockAnalyzer.cs" />
     <Compile Include="StockRating.cs" />
   </ItemGroup>
@@ -53,5 +55,6 @@
       <Name>BaseModels</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

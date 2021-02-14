@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace Services.DataService.DataAccess
 {
-    public interface IDataAccess<T> : ISourceAccess<T>
+    public interface IDataAccess<T> : ISourceAccess<T>, IDataAccess
     {
         void Add(T obj);
         void Remove(T obj);
+    }
+
+    public interface IDataAccess 
+    {
+        event EventHandler OnDataAccessChange;
     }
 }

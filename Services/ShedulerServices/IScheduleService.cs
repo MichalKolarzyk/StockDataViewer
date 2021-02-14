@@ -9,7 +9,7 @@ namespace Services.ShedulerServices
 {
     public interface IScheduleService
     {
-        void ScheduleJob(Action action, string quartz);
+        void ScheduleJob(Action action, EnumQuartz enumQuartz);
         Task Start();
         Task Stop();
     }

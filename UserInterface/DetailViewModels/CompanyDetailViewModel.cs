@@ -1,6 +1,8 @@
 ﻿using BaseModels;
 using BaseModels.Extensions;
+using OxyPlot;
 using Services.ApplicationServices;
+using Services.PlotService;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,10 +16,12 @@ namespace UserInterface.DetailViewModels
     public class CompanyDetailViewModel : BaseViewModel
     {
         IApplicationService _applicationService;
-        public CompanyDetailViewModel(IApplicationService applicationService)
+        IPlotService _plotService;
+        public CompanyDetailViewModel(IApplicationService applicationService, IPlotService plotService)
         {
             _applicationService = applicationService;
             _applicationService.OnSelectedObjectChange += _applicationService_OnSelectedObjectChange;
+            _plotService = plotService;
         }
 
         private void _applicationService_OnSelectedObjectChange(object sender, EventArgs e)
@@ -53,6 +57,21 @@ namespace UserInterface.DetailViewModels
             }
         }
 
+        public float MarketCup
+        {
+            get { return _company.MarketCup; }
+            set
+            {
+                _company.MarketCup = value;
+                OnPropertyChanged(nameof(MarketCup));
+            }
+        }
+
+        public float RegularMarketPrice
+        {
+            get { return _company.RegularMarketPrice; }
+        }
+
         private ObservableCollection<Price> _prices;
         public ObservableCollection<Price> Prices
         {
@@ -61,7 +80,14 @@ namespace UserInterface.DetailViewModels
             { 
                 _prices = value;
                 OnPropertyChanged(nameof(Prices));
+                OnPropertyChanged(nameof(RegularMarketPrice));
+                OnPropertyChanged(nameof(PlotModel));
             }
+        }
+
+        public PlotModel PlotModel
+        {
+            get { return _plotService.GetPlotl<Price>().GetModel(Prices); }
         }
 
     }

@@ -9,6 +9,6 @@ namespace StockAnalyzer
 {
     public interface IStockAnalyzer
     {
-        StockRating Analyze(IStock stock, IStockAlgorithm stockAlgorithm);
+        StockRating Analyze(IStock stock, EnumStockAlgorithms enumStockAlgorithms);
     }
 }

@@ -9,9 +9,9 @@ namespace StockAnalyzer
 {
     public class StockAnalyzer : IStockAnalyzer
     {
-        public StockRating Analyze(IStock stock, IStockAlgorithm stockAlgorithm)
+        public StockRating Analyze(IStock stock, EnumStockAlgorithms enumStockAlgorithms)
         {
-            return stockAlgorithm.Evaluate(stock);
+            return StockAlgorithmFactory.Create(enumStockAlgorithms).Evaluate(stock);
         }
     }
 }

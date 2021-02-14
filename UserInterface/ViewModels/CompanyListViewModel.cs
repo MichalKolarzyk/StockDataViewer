@@ -31,7 +31,13 @@ namespace UserInterface.ViewModels
             _addCompanyDialogViewModel = addCompanyDialogViewModel;
 
             _dataService = dataService;
+            _dataService.SubscribeOnDataChange<Company>(OnCompaniesChange);
 
+            UpdateCompanies();
+        }
+
+        private void OnCompaniesChange(object sender, EventArgs e)
+        {
             UpdateCompanies();
         }
 

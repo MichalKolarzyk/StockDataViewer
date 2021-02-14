@@ -10,5 +10,7 @@ namespace Services.DataService
     {
         void Add<T>(T obj);
         void Remove<T>(T obj);
+        void SubscribeOnDataChange<T>(EventHandler eventHandler);
+        void UnSubscribeOnDataChange<T>(EventHandler eventHandler);
     }
 }

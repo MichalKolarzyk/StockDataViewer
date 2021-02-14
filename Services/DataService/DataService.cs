@@ -29,5 +29,15 @@ namespace Services.DataService
         {
             DataAccessFactory.Create<T>().Remove(obj);
         }
+
+        public void SubscribeOnDataChange<T>(EventHandler eventHandler)
+        {
+            DataAccessFactory.Create<T>().OnDataAccessChange += eventHandler;
+        }
+
+        public void UnSubscribeOnDataChange<T>(EventHandler eventHandler)
+        {
+            DataAccessFactory.Create<T>().OnDataAccessChange -= eventHandler;
+        }
     }
 }

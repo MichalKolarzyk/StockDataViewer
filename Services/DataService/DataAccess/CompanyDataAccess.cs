@@ -9,9 +9,29 @@ namespace Services.DataService.DataAccess
 {
     public class CompanyDataAccess : IDataAccess<Company>
     {
+        List<Company> _companies;
+        public CompanyDataAccess()
+        {
+            List<Price> prices = new List<Price>()
+            {
+                new Price { Date=new DateTime(2020,1,1), Value=1},
+                new Price { Date = new DateTime(2020,1,2), Value = 5 },
+                new Price { Date = new DateTime(2020,1,3), Value = 3 },
+            };
+            _companies = new List<Company>
+            {
+                new Company {Id = "APPL", FullName="Apple", Prices = prices},
+                new Company {Id = "KOS", FullName="Kosmos Energy"},
+                new Company {Id = "MORD", FullName="Moderna"}
+            };
+        }
+
+        public event EventHandler OnDataAccessChange;
+
         public void Add(Company obj)
         {
-            throw new NotImplementedException();
+            _companies.Add(obj);
+            OnDataAccessChange?.Invoke(this, null);
         }
 
         public Company Get(string id)
@@ -21,23 +41,13 @@ namespace Services.DataService.DataAccess
 
         public IEnumerable<Company> GetAll(params string[] ids)
         {
-            List<Price> prices = new List<Price>()
-            {
-                new Price { Date=DateTime.Now, Value=1},
-                new Price { Date = DateTime.Now, Value = 2 },
-                new Price { Date = DateTime.Now, Value = 3 },
-            };
-            return new List<Company>
-            {
-                new Company {Id = "APPL", FullName="Apple", Prices = prices},
-                new Company {Id = "KOS", FullName="Kosmos Energy"},
-                new Company {Id = "MORD", FullName="Moderna"}
-            };
+            return _companies;
         }
 
         public void Remove(Company obj)
         {
-            throw new NotImplementedException();
+            _companies.Remove(obj);
+            OnDataAccessChange?.Invoke(this, null);
         }
     }
 }

@@ -8,7 +8,7 @@ using YahooFinanceApi;
 
 namespace Services.DataService.SourceAccess
 {
-    class CompanySourceAccess : BaseSourceAccess<Company>
+    class CompanySourceAccess : ISourceAccess<Company>
     {
         public IEnumerable<string> Symbols { get; set; }
         public IEnumerable<Field> Fields { get; set; }
@@ -34,7 +34,7 @@ namespace Services.DataService.SourceAccess
             };
         }
 
-        public override Company Get(string id)
+        public Company Get(string id)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace Services.DataService.SourceAccess
             }
         }
 
-        public override IEnumerable<Company> GetAll(params string[] ids)
+        public IEnumerable<Company> GetAll(params string[] ids)
         {
             var securities = Yahoo.Symbols(Symbols.ToArray()).Fields(Fields.ToArray()).QueryAsync().Result;
             List<Company> output = new List<Company>();

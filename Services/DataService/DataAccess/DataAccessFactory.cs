@@ -10,9 +10,11 @@ namespace Services.DataService.DataAccess
     public static class DataAccessFactory
     {
         public static Type[] _types;
+        static Dictionary<Type, IDataAccess> _sourceAccesInstances;
         static DataAccessFactory()
         {
             _types = Assembly.GetExecutingAssembly().GetTypes();
+            _sourceAccesInstances = new Dictionary<Type, IDataAccess>();
         }
         public static IDataAccess<T> Create<T>()
         {
@@ -25,7 +27,13 @@ namespace Services.DataService.DataAccess
                 throw new NotImplementedException
                     ($"Type of {typeof(T)} is not implemented in {nameof(DataAccessFactory)}");
             }
-            return (IDataAccess<T>)Activator.CreateInstance(type);
+            if (_sourceAccesInstances.ContainsKey(type))
+            {
+                return (IDataAccess<T>)_sourceAccesInstances[type];
+            }
+            IDataAccess<T> sourceAccess = (IDataAccess<T>)Activator.CreateInstance(type);
+            _sourceAccesInstances.Add(type, sourceAccess);
+            return sourceAccess;
         }
     }
 }

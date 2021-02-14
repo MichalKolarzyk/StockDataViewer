@@ -43,6 +43,22 @@
                  Grid.Column="1"
                  Style="{StaticResource BasicTextBox}"/>
 
+        <TextBlock Text="Market Cup: " 
+                   Grid.Row="2"
+                   Style="{StaticResource BasicTextBlock}"/>
+        <TextBox Text="{Binding MarketCup}" 
+                 Grid.Row="2"
+                 Grid.Column="1"
+                 Style="{StaticResource BasicTextBox}"/>
+
+        <TextBlock Text="Regular Market Price: " 
+                   Grid.Row="3"
+                   Style="{StaticResource BasicTextBlock}"/>
+        <TextBox Text="{Binding RegularMarketPrice, Mode=OneWay}" 
+                 Grid.Row="3"
+                 Grid.Column="1"
+                 Style="{StaticResource BasicTextBox}"/>
+
         <ListBox Style="{StaticResource BasicListBox}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -56,15 +72,11 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <oxy:Plot Grid.Row="10" 
-                  Background="Transparent"
-                  PlotAreaBorderColor="{StaticResource BorderColor}"
-                  TextColor="{StaticResource TextColor}"
-                  AxisTierDistance="1"
-                  
-                  Grid.ColumnSpan="2" >
-            <oxy:LinearBarSeries ItemsSource="{Binding Prices}"/>
-            
-        </oxy:Plot>
+        <oxy:PlotView Grid.Row="10" 
+                      Background="Transparent"
+                      Model="{Binding PlotModel}"
+                      Grid.ColumnSpan="2" >
+
+        </oxy:PlotView>
     </Grid>
 </UserControl>

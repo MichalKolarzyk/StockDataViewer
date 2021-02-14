@@ -13,8 +13,9 @@ namespace Services.ShedulerServices
         StdSchedulerFactory factory = new StdSchedulerFactory();
         IScheduler _scheduler;
 
-        public void ScheduleJob(Action action, string quartzExpression)
+        public void ScheduleJob(Action action, EnumQuartz enumQuartz)
         {
+            string quartzExpression = QuartzFactory.Create(enumQuartz);
             ITrigger trigger = QuartzTriggersFactory.Create(quartzExpression);
             JobDataMap jobDataMap = new JobDataMap();
             jobDataMap.Add(jobDataMap.Count.ToString(), action);

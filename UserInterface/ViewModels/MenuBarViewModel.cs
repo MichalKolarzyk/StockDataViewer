@@ -31,7 +31,7 @@ namespace UserInterface.ViewModels
         private void SettingsMethod(object obj)
         {
             _scheduleService.Start();
-            _scheduleService.ScheduleJob(() => MessageBox.Show("Job hello"), "0 * * ? * *");
+            _scheduleService.ScheduleJob(() => MessageBox.Show("Job hello"), EnumQuartz.EveryMinute);
         }
     }
 }
