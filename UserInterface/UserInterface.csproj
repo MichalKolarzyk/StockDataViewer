@@ -50,6 +50,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
@@ -101,13 +104,17 @@
     <Compile Include="DialogViews\AddCompanyDialogView.xaml.cs">
       <DependentUpon>AddCompanyDialogView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\CompanyViewModel.cs" />
+    <Compile Include="Models\PriceViewModel.cs" />
+    <Compile Include="Models\SessionViewModel.cs" />
+    <Compile Include="Utilities\AutoMapperModule.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="Utilities\ServiceLocator.cs" />
     <Compile Include="Utilities\ServiceModule.cs" />
     <Compile Include="Utilities\BaseViewModel.cs" />
-    <Compile Include="ViewModels\CompanyListViewModel.cs" />
-    <Compile Include="ViewModels\DetailViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\CompanyListFormViewModel.cs" />
+    <Compile Include="ViewModels\DetailFormViewModel.cs" />
+    <Compile Include="ViewModels\MainFormViewModel.cs" />
     <Compile Include="ViewModels\MenuBarViewModel.cs" />
     <Compile Include="Views\CompanyListView.xaml.cs">
       <DependentUpon>CompanyListView.xaml</DependentUpon>
@@ -218,5 +225,6 @@
   <ItemGroup>
     <Resource Include="Icons\UI.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

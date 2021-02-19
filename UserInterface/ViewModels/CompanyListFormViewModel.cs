@@ -1,6 +1,8 @@
-﻿using BaseModels;
+﻿using AutoMapper;
+using BaseModels;
 using Services.ApplicationServices;
 using Services.DataService;
+using Services.SessionService;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,51 +12,39 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using UserInterface.Dialogs;
 using UserInterface.DialogViewModels;
+using UserInterface.Models;
 using UserInterface.Utilities;
 
 namespace UserInterface.ViewModels
 {
-    public class CompanyListViewModel : BaseViewModel
+    public class CompanyListFormViewModel : BaseViewModel
     {
         IApplicationService _applicationService;
         IDialogService _dialogService;
         IDataService _dataService;
+        ISessionService _sessionService;
+        IMapper _mapper;
         AddCompanyDialogViewModel _addCompanyDialogViewModel;
-        public CompanyListViewModel(
+
+        public SessionViewModel SessionViewModel { get; set; }
+
+        public CompanyListFormViewModel(
             IDialogService dialogService,
             IDataService dataService,
+            ISessionService sessionService,
             IApplicationService applicationService,
+            IMapper mapper,
             AddCompanyDialogViewModel addCompanyDialogViewModel)
         {
             _applicationService = applicationService;
             _dialogService = dialogService;
             _addCompanyDialogViewModel = addCompanyDialogViewModel;
 
+            _sessionService = sessionService;
             _dataService = dataService;
-            _dataService.SubscribeOnDataChange<Company>(OnCompaniesChange);
+            _mapper = mapper;
 
-            UpdateCompanies();
-        }
-
-        private void OnCompaniesChange(object sender, EventArgs e)
-        {
-            UpdateCompanies();
-        }
-
-        private void UpdateCompanies()
-        {
-            Companies = new ObservableCollection<Company>(_dataService.GetAll<Company>());
-        }
-
-        private ObservableCollection<Company> _companies;
-        public ObservableCollection<Company> Companies
-        {
-            get { return _companies; }
-            set 
-            { 
-                _companies = value;
-                OnPropertyChanged(nameof(Companies));
-            }
+            SessionViewModel = _mapper.Map<SessionViewModel>(_sessionService.Session);
         }
 
         private ICommand _addCommand;
@@ -94,9 +84,9 @@ namespace UserInterface.ViewModels
             }
         }
 
-        public Company SelectedCompany 
+        public CompanyViewModel SelectedCompany 
         {
-            get => (Company)_applicationService.SelectedObject;
+            get => (CompanyViewModel)_applicationService.SelectedObject;
             set => _applicationService.SelectedObject = value;
         }
     }

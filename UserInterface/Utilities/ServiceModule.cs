@@ -37,6 +37,8 @@ namespace UserInterface.Utilities
             {
                 Bind(type).ToSelf().InSingletonScope();
             }
+
+
         }
     }
 }

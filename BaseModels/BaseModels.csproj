@@ -44,7 +44,6 @@
     <Compile Include="Company.cs" />
     <Compile Include="Extensions\CompanyListExtensions.cs" />
     <Compile Include="ICompany.cs" />
-    <Compile Include="IPrice.cs" />
     <Compile Include="IStock.cs" />
     <Compile Include="Price.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

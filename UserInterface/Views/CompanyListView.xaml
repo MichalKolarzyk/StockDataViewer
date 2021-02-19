@@ -22,7 +22,7 @@
             </DockPanel>
             
             <StackPanel Grid.Row="1">
-                <ListBox ItemsSource="{Binding Path=Companies}" 
+                <ListBox ItemsSource="{Binding Path=SessionViewModel.Companies}" 
                          Style="{StaticResource BasicListBox}"
                      SelectedItem="{Binding Path=SelectedCompany}">
 

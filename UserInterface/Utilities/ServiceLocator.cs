@@ -15,22 +15,22 @@ namespace UserInterface.Utilities
 
         public ServiceLocator()
         {
-            kernel = new StandardKernel(new ServiceModule());
+            kernel = new StandardKernel(new ServiceModule(), new AutoMapperModule());
         }
 
-        public MainViewModel MainViewModel
+        public MainFormViewModel MainViewModel
         {
-            get { return kernel.Get<MainViewModel>(); }
+            get { return kernel.Get<MainFormViewModel>(); }
         }
 
-        public CompanyListViewModel CompanyListViewModel
+        public CompanyListFormViewModel CompanyListViewModel
         {
-            get { return kernel.Get<CompanyListViewModel>(); }
+            get { return kernel.Get<CompanyListFormViewModel>(); }
         }
 
-        public DetailViewModel DetailViewModel
+        public DetailFormViewModel DetailViewModel
         {
-            get { return kernel.Get<DetailViewModel>(); }
+            get { return kernel.Get<DetailFormViewModel>(); }
         }
 
         public CompanyDetailViewModel CompanyDetailViewModel
@@ -38,9 +38,9 @@ namespace UserInterface.Utilities
             get { return kernel.Get<CompanyDetailViewModel>(); }
         }
 
-        public MenuBarViewModel MenuBarViewModel
+        public MenuBarFormViewModel MenuBarViewModel
         {
-            get { return kernel.Get<MenuBarViewModel>(); }
+            get { return kernel.Get<MenuBarFormViewModel>(); }
         }
     }
 }

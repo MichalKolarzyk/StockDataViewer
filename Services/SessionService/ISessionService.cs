@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseModels
+namespace Services.SessionService
 {
-    public class Price 
+    public interface ISessionService
     {
-        public float Value { get; set; }
-        public DateTime Date { get; set; }
+        Session Session { get; set; }
     }
 }

@@ -10,10 +10,10 @@ using UserInterface.Utilities;
 
 namespace UserInterface.ViewModels
 {
-    public class MenuBarViewModel
+    public class MenuBarFormViewModel
     {
         IScheduleService _scheduleService;
-        public MenuBarViewModel(IScheduleService scheduleService)
+        public MenuBarFormViewModel(IScheduleService scheduleService)
         {
             _scheduleService = scheduleService;
         }
