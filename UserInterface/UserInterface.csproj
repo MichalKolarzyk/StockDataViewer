@@ -112,6 +112,7 @@
     <Compile Include="Utilities\ServiceLocator.cs" />
     <Compile Include="Utilities\ServiceModule.cs" />
     <Compile Include="Utilities\BaseViewModel.cs" />
+    <Compile Include="Utilities\SessionManager.cs" />
     <Compile Include="ViewModels\CompanyListFormViewModel.cs" />
     <Compile Include="ViewModels\DetailFormViewModel.cs" />
     <Compile Include="ViewModels\MainFormViewModel.cs" />

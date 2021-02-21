@@ -35,7 +35,7 @@
         <TextBlock Text="Full Name: "
                        Grid.Row="1"
                        Style="{StaticResource BasicTextBlock}"/>
-        <TextBlock Text="{Binding FullName, Mode=TwoWay}" 
+        <TextBlock Text="{Binding CompanyViewModel.FullName, Mode=TwoWay}" 
                      Grid.Row="1"
                      Grid.Column="1"
                      Style="{StaticResource BasicTextBlock}"/>
@@ -43,7 +43,7 @@
         <TextBlock Text="Regular Market Price: "
                        Grid.Row="2"
                        Style="{StaticResource BasicTextBlock}"/>
-        <TextBlock Text="{Binding RegularMarketPrice, Mode=OneWay}" 
+        <TextBlock Text="{Binding CompanyViewModel.RegularMarketPrice, Mode=OneWay}" 
                      Grid.Row="2"
                      Grid.Column="1"
                      Style="{StaticResource BasicTextBlock}"/>
@@ -51,7 +51,7 @@
         <TextBlock Text="Market Cup: "
                        Grid.Row="3"
                        Style="{StaticResource BasicTextBlock}"/>
-        <TextBlock Text="{Binding MarketCup, Mode=TwoWay}" 
+        <TextBlock Text="{Binding CompanyViewModel.MarketCup, Mode=TwoWay}" 
                      Grid.Row="3"
                      Grid.Column="1"
                      Style="{StaticResource BasicTextBlock}"/>

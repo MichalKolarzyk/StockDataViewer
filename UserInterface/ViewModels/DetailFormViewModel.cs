@@ -13,26 +13,26 @@ namespace UserInterface.ViewModels
 {
     public class DetailFormViewModel : BaseViewModel
     {
-        IApplicationService _applicationService;
         CompanyDetailViewModel _companyDetailViewModel;
-        public DetailFormViewModel(IApplicationService applicationService, 
-            CompanyDetailViewModel companyDetailViewModel)
+        SessionViewModel SessionViewModel { get; set; }
+        public DetailFormViewModel(CompanyDetailViewModel companyDetailViewModel, SessionManager sessionManager)
         {
-            _applicationService = applicationService;
-            _applicationService.OnSelectedObjectChange += _applicationService_OnSelectedObjectChange;
-
             _companyDetailViewModel = companyDetailViewModel;
+
+            SessionViewModel = sessionManager.SessionViewModel;
+            SessionViewModel.PropertyChanged += _applicationService_OnSelectedObjectChange;
         }
         
-        public BaseViewModel SelectedViewModel { get; set; }
-
         private void _applicationService_OnSelectedObjectChange(object sender, EventArgs e)
         {
-            if (_applicationService.SelectedObject is CompanyViewModel)
-            {
-                SelectedViewModel = _companyDetailViewModel;
-                OnPropertyChanged(nameof(SelectedViewModel));
-            }
+            SelectedViewModel = _companyDetailViewModel;
+        }
+
+        private BaseViewModel _selectecViewModel;
+        public BaseViewModel SelectedViewModel 
+        {
+            get => _selectecViewModel;
+            set => SetField(ref _selectecViewModel, value);
         }
     }
 }

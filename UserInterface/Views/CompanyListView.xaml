@@ -24,7 +24,7 @@
             <StackPanel Grid.Row="1">
                 <ListBox ItemsSource="{Binding Path=SessionViewModel.Companies}" 
                          Style="{StaticResource BasicListBox}"
-                     SelectedItem="{Binding Path=SelectedCompany}">
+                     SelectedItem="{Binding Path=SessionViewModel.SelectedCompany}">
 
                 </ListBox>
             </StackPanel>

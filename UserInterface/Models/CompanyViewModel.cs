@@ -32,10 +32,9 @@ namespace UserInterface.Models
         }
 
         private ObservableCollection<PriceViewModel> _prices = new ObservableCollection<PriceViewModel>();
-
         public ObservableCollection<PriceViewModel> Prices 
         {
-            get => Prices;
+            get => _prices;
             set
             {
                 SetField(ref _prices, value);

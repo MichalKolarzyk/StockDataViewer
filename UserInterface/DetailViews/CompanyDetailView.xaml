@@ -30,7 +30,7 @@
         <TextBlock Text="Id: " 
                    Grid.Row="0"
                    Style="{StaticResource BasicTextBlock}"/>
-        <TextBox Text="{Binding Id}" 
+        <TextBox Text="{Binding SessionViewModel.SelectedCompany.Id}" 
                  Grid.Row="0"
                  Grid.Column="1"
                  Style="{StaticResource BasicTextBox}"/>
@@ -38,7 +38,7 @@
         <TextBlock Text="Full Name: " 
                    Grid.Row="1"
                    Style="{StaticResource BasicTextBlock}"/>
-        <TextBox Text="{Binding FullName}" 
+        <TextBox Text="{Binding SessionViewModel.SelectedCompany.FullName}" 
                  Grid.Row="1"
                  Grid.Column="1"
                  Style="{StaticResource BasicTextBox}"/>
@@ -46,7 +46,7 @@
         <TextBlock Text="Market Cup: " 
                    Grid.Row="2"
                    Style="{StaticResource BasicTextBlock}"/>
-        <TextBox Text="{Binding MarketCup}" 
+        <TextBox Text="{Binding SessionViewModel.SelectedCompany.MarketCup}" 
                  Grid.Row="2"
                  Grid.Column="1"
                  Style="{StaticResource BasicTextBox}"/>
@@ -54,7 +54,7 @@
         <TextBlock Text="Regular Market Price: " 
                    Grid.Row="3"
                    Style="{StaticResource BasicTextBlock}"/>
-        <TextBox Text="{Binding RegularMarketPrice, Mode=OneWay}" 
+        <TextBox Text="{Binding SessionViewModel.SelectedCompany.RegularMarketPrice, Mode=OneWay}" 
                  Grid.Row="3"
                  Grid.Column="1"
                  Style="{StaticResource BasicTextBox}"/>

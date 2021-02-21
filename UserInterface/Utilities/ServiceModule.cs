@@ -20,6 +20,7 @@ namespace UserInterface.Utilities
         public override void Load()
         {
             Bind<IDialogService>().To<DialogService>().InSingletonScope();
+            Bind<SessionManager>().ToSelf().InSingletonScope();
 
             IEnumerable<Type> serviceAssemblyTypes = Assembly.Load("Services").GetTypes();
 

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Michal\Source\Repos\MichalKolarzyk\StockDataViewer\UserInterface\obj\Debug\
+C:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\obj\Debug\
 UserInterface
 none
 false
 DEBUG;TRACE
-C:\Users\Michal\Source\Repos\MichalKolarzyk\StockDataViewer\UserInterface\App.xaml
+C:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\App.xaml
 7-2048005060
 
-29687337894
-23-830288251
+30-1723677580
+231664710847
 DetailViews\CompanyDetailView.xaml;Dialogs\DialogWindow.xaml;DialogViews\AddCompanyDialogView.xaml;Views\CompanyListView.xaml;Views\DetailView.xaml;Views\MainView.xaml;Views\MenuBarView.xaml;
 
 False

@@ -12,10 +12,11 @@ namespace UserInterface.Utilities
         private Action<object> execute;
         private Func<object, bool> canExecute;
 
-        public event EventHandler CanExecuteChanged
+        public event EventHandler CanExecuteChanged;
+
+        public void NotifyCanExecuteChange()
         {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
+            CanExecuteChanged?.Invoke(this, null);
         }
 
         public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)

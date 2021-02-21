@@ -16,5 +16,17 @@ namespace UserInterface.Models
             get => _companies;
             set => SetField(ref _companies, value);
         }
+
+        private CompanyViewModel _selectedCompany;
+
+        public CompanyViewModel SelectedCompany
+        {
+            get { return _selectedCompany; }
+            set { 
+                _selectedCompany = value;
+                OnPropertyChanged();
+            }
+        }
+
     }
 }

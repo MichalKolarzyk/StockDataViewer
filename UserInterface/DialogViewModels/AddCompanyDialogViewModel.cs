@@ -1,4 +1,5 @@
-﻿using BaseModels;
+﻿using AutoMapper;
+using BaseModels;
 using Services.DataService;
 using System;
 using System.Collections.Generic;
@@ -8,75 +9,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using UserInterface.Dialogs;
+using UserInterface.Models;
 using UserInterface.Utilities;
 
 namespace UserInterface.DialogViewModels
 {
-    public class AddCompanyDialogViewModel : DialogViewModelBase<Company>
+    public class AddCompanyDialogViewModel : DialogViewModelBase<CompanyViewModel>
     {
-        Company _company = new Company();
+
+
+        IMapper _mapper;
         ISourceService _sourceService;
-        public AddCompanyDialogViewModel(ISourceService sourceService)
+        public AddCompanyDialogViewModel(ISourceService sourceService, IMapper mapper)
         {
             _sourceService = sourceService;
+            _mapper = mapper;
+
+        }
+
+        private CompanyViewModel _companyViewModel = new CompanyViewModel();
+        public CompanyViewModel CompanyViewModel
+        {
+            get => _companyViewModel;
+            set => SetField(ref _companyViewModel, value);
         }
 
         public string Id
         {
-            get { return _company.Id; }
+            get { return CompanyViewModel.Id; }
             set
             {
-                _company.Id = value;
-                OnPropertyChanged(Id);
-                UpdateCompany(Id);
-            }
-        }
-
-        public string FullName
-        {
-            get { return _company.FullName; }
-            set { 
-                _company.FullName = value;
-                OnPropertyChanged(nameof(FullName));
-            }
-        }
-
-        public float RegularMarketPrice => _company.RegularMarketPrice;
-
-        public float MarketCup
-        {
-            get { return _company.MarketCup; }
-            set
-            {
-                _company.MarketCup = value;
-                OnPropertyChanged(nameof(MarketCup));
-            }
-        }
-        public ObservableCollection<Price> Prices
-        {
-            get { return new ObservableCollection<Price>(_company.Prices); }
-            set { 
-                _company.Prices = value.ToList();
-                OnPropertyChanged(nameof(Prices));
-                OnPropertyChanged(nameof(RegularMarketPrice));
+                CompanyViewModel.Id = value;
+                UpdateCompany(CompanyViewModel.Id);
             }
         }
 
         private void UpdateCompany(string id)
         {
             Company result = _sourceService.Get<Company>(id);
-            if (result != null)
+            if(result != null)
             {
-                FullName = result.FullName;
-                MarketCup = result.MarketCup;
-                Prices = new ObservableCollection<Price>(result.Prices);
+                CompanyViewModel = _mapper.Map<CompanyViewModel>(result);
             }
             else
             {
-                FullName = "";
-                MarketCup = default;
-                Prices = new ObservableCollection<Price>();
+                CompanyViewModel.FullName = "";
+                CompanyViewModel.Prices = new ObservableCollection<PriceViewModel>();
+                CompanyViewModel.MarketCup = default;
             }
+            ((RelayCommand)CreateCommand).NotifyCanExecuteChange();
         }
 
         #region CreateCommand
@@ -93,13 +74,13 @@ namespace UserInterface.DialogViewModels
         private bool CanCreate(object arg)
         {
             if (string.IsNullOrEmpty(Id)) return false;
-            //if (string.IsNullOrEmpty(FullName)) return false;
+            if (string.IsNullOrEmpty(CompanyViewModel.FullName)) return false;
             return true;
         }
 
         private void Create(object obj)
         {
-            CloseDialogWithResult((IDialogWindow)obj, _company);
+            CloseDialogWithResult((IDialogWindow)obj, CompanyViewModel);
         }
         #endregion
     }
