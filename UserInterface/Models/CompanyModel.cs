@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvvmWpfFramework.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -8,7 +9,7 @@ using UserInterface.Utilities;
 
 namespace UserInterface.Models
 {
-    public class CompanyViewModel : BaseViewModel
+    public class CompanyModel : BaseViewModel
     {
         private string _id = string.Empty;
         public string Id 
@@ -31,8 +32,8 @@ namespace UserInterface.Models
             set => SetField(ref _marketCup, value);
         }
 
-        private ObservableCollection<PriceViewModel> _prices = new ObservableCollection<PriceViewModel>();
-        public ObservableCollection<PriceViewModel> Prices 
+        private ObservableCollection<PriceModel> _prices = new ObservableCollection<PriceModel>();
+        public ObservableCollection<PriceModel> Prices 
         {
             get => _prices;
             set

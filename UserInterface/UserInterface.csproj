@@ -89,44 +89,42 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DetailViewModels\CompanyDetailViewModel.cs" />
-    <Compile Include="DetailViews\CompanyDetailView.xaml.cs">
+    <Compile Include="ViewModels\UserControls\CompanyDetailViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\MenuBarViewModel.cs" />
+    <Compile Include="Views\UserControls\CompanyDetailView.xaml.cs">
       <DependentUpon>CompanyDetailView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\DialogService.cs" />
     <Compile Include="Dialogs\DialogViewModelBase.cs" />
-    <Compile Include="Dialogs\DialogWindow.xaml.cs">
+    <Compile Include="Views\Windows\DialogWindow.xaml.cs">
       <DependentUpon>DialogWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\IDialogService.cs" />
     <Compile Include="Dialogs\IDialogWindow.cs" />
-    <Compile Include="DialogViewModels\AddCompanyDialogViewModel.cs" />
-    <Compile Include="DialogViews\AddCompanyDialogView.xaml.cs">
+    <Compile Include="ViewModels\UserControls\AddCompanyDialogViewModel.cs" />
+    <Compile Include="Views\UserControls\AddCompanyDialogView.xaml.cs">
       <DependentUpon>AddCompanyDialogView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\CompanyViewModel.cs" />
-    <Compile Include="Models\PriceViewModel.cs" />
-    <Compile Include="Models\SessionViewModel.cs" />
+    <Compile Include="Models\CompanyModel.cs" />
+    <Compile Include="Models\PriceModel.cs" />
+    <Compile Include="Models\SessionModel.cs" />
     <Compile Include="Utilities\AutoMapperModule.cs" />
-    <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="Utilities\ServiceLocator.cs" />
     <Compile Include="Utilities\ServiceModule.cs" />
-    <Compile Include="Utilities\BaseViewModel.cs" />
     <Compile Include="Utilities\SessionManager.cs" />
-    <Compile Include="ViewModels\CompanyListFormViewModel.cs" />
-    <Compile Include="ViewModels\DetailFormViewModel.cs" />
-    <Compile Include="ViewModels\MainFormViewModel.cs" />
-    <Compile Include="ViewModels\MenuBarViewModel.cs" />
-    <Compile Include="Views\CompanyListView.xaml.cs">
+    <Compile Include="ViewModels\UserControls\CompanyListFormViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\DetailFormViewModel.cs" />
+    <Compile Include="ViewModels\Windows\MainFormViewModel.cs" />
+    <Compile Include="Views\UserControls\CompanyListView.xaml.cs">
       <DependentUpon>CompanyListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\DetailView.xaml.cs">
+    <Compile Include="Views\UserControls\DetailView.xaml.cs">
       <DependentUpon>DetailView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainView.xaml.cs">
+    <Compile Include="Views\Windows\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MenuBarView.xaml.cs">
+    <Compile Include="Views\UserControls\MenuBarView.xaml.cs">
       <DependentUpon>MenuBarView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -158,31 +156,31 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="DetailViews\CompanyDetailView.xaml">
+    <Page Include="Views\UserControls\CompanyDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dialogs\DialogWindow.xaml">
+    <Page Include="Views\Windows\DialogWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DialogViews\AddCompanyDialogView.xaml">
+    <Page Include="Views\UserControls\AddCompanyDialogView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CompanyListView.xaml">
+    <Page Include="Views\UserControls\CompanyListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\DetailView.xaml">
+    <Page Include="Views\UserControls\DetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainView.xaml">
+    <Page Include="Views\Windows\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\MenuBarView.xaml">
+    <Page Include="Views\UserControls\MenuBarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,6 +189,10 @@
     <ProjectReference Include="..\BaseModels\BaseModels.csproj">
       <Project>{943F7AC3-AAB3-42F6-B2CC-41DE849A0E65}</Project>
       <Name>BaseModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvvmWpfFramework\MvvmWpfFramework.csproj">
+      <Project>{48469de9-a534-464d-920a-1dcc680a97e6}</Project>
+      <Name>MvvmWpfFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{cf042ef4-6fa8-4d24-942d-dc6add966e0b}</Project>
@@ -226,6 +228,11 @@
   <ItemGroup>
     <Resource Include="Icons\UI.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Services\ApplicationService\" />
+    <Folder Include="Services\PlotService\" />
+    <Folder Include="Utilities\DependencyInjection\" />
+    <Folder Include="Utilities\Mapper\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

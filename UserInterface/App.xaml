@@ -9,7 +9,7 @@
              xmlns:detailViewModels ="clr-namespace:UserInterface.DetailViewModels"
              xmlns:detailViews="clr-namespace:UserInterface.DetailViews"
              xmlns:local="clr-namespace:UserInterface"
-             StartupUri="Views/MainView.xaml">
+             StartupUri="Views/Windows/MainView.xaml">
     <Application.Resources>
         <utilities:ServiceLocator x:Key="ServiceLocator" />
         

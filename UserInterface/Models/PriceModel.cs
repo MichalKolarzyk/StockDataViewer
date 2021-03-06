@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvvmWpfFramework.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using UserInterface.Utilities;
 
 namespace UserInterface.Models
 {
-    public class PriceViewModel : BaseViewModel
+    public class PriceModel : BaseViewModel
     {
         private float _value;
         public float Value 

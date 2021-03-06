@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BaseModels;
 using BaseModels.Extensions;
+using MvvmWpfFramework.ViewModels;
 using OxyPlot;
 using Services.ApplicationServices;
 using Services.PlotService;
@@ -20,7 +21,7 @@ namespace UserInterface.DetailViewModels
     {
         IPlotService _plotService;
 
-        public SessionViewModel SessionViewModel { get; set; }
+        public SessionModel SessionViewModel { get; set; }
         public CompanyDetailViewModel(IPlotService plotService, SessionManager sessionManager)
         {
             _plotService = plotService;

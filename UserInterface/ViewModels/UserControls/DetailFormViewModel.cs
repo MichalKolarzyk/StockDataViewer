@@ -1,4 +1,5 @@
 ﻿using BaseModels;
+using MvvmWpfFramework.ViewModels;
 using Services.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace UserInterface.ViewModels
     public class DetailFormViewModel : BaseViewModel
     {
         CompanyDetailViewModel _companyDetailViewModel;
-        SessionViewModel SessionViewModel { get; set; }
+        SessionModel SessionViewModel { get; set; }
         public DetailFormViewModel(CompanyDetailViewModel companyDetailViewModel, SessionManager sessionManager)
         {
             _companyDetailViewModel = companyDetailViewModel;

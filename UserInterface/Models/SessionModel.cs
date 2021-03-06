@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvvmWpfFramework.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -8,18 +9,18 @@ using UserInterface.Utilities;
 
 namespace UserInterface.Models
 {
-    public class SessionViewModel : BaseViewModel
+    public class SessionModel : BaseViewModel
     {
-        private ObservableCollection<CompanyViewModel> _companies;
-        public ObservableCollection<CompanyViewModel> Companies 
+        private ObservableCollection<CompanyModel> _companies;
+        public ObservableCollection<CompanyModel> Companies 
         {
             get => _companies;
             set => SetField(ref _companies, value);
         }
 
-        private CompanyViewModel _selectedCompany;
+        private CompanyModel _selectedCompany;
 
-        public CompanyViewModel SelectedCompany
+        public CompanyModel SelectedCompany
         {
             get { return _selectedCompany; }
             set { 

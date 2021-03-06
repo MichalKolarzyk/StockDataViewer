@@ -14,8 +14,8 @@ namespace UserInterface.Utilities
 
         public SessionManager(IMapper mapper, ISessionService sessionService)
         {
-            SessionViewModel = mapper.Map<SessionViewModel>(sessionService.Session);
+            SessionViewModel = mapper.Map<SessionModel>(sessionService.Session);
         }
-        public SessionViewModel SessionViewModel { get; set; }
+        public SessionModel SessionViewModel { get; set; }
     }
 }

@@ -1,10 +1,10 @@
 ﻿
 FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\App.xaml;;
-FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\DetailViews\CompanyDetailView.xaml;;
-FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Dialogs\DialogWindow.xaml;;
-FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\DialogViews\AddCompanyDialogView.xaml;;
-FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\CompanyListView.xaml;;
-FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\DetailView.xaml;;
-FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\MainView.xaml;;
-FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\MenuBarView.xaml;;
+FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\UserControls\CompanyDetailView.xaml;;
+FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\Windows\DialogWindow.xaml;;
+FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\UserControls\AddCompanyDialogView.xaml;;
+FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\UserControls\CompanyListView.xaml;;
+FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\UserControls\DetailView.xaml;;
+FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\Windows\MainView.xaml;;
+FC:\Users\Michal\source\repos\MichalKolarzyk\StockDataViewer\UserInterface\Views\UserControls\MenuBarView.xaml;;
 

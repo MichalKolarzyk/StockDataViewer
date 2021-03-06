@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BaseModels;
+using MvvmWpfFramework.Commands;
 using Services.DataService;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ using UserInterface.Utilities;
 
 namespace UserInterface.DialogViewModels
 {
-    public class AddCompanyDialogViewModel : DialogViewModelBase<CompanyViewModel>
+    public class AddCompanyDialogViewModel : DialogViewModelBase<CompanyModel>
     {
 
 
@@ -27,8 +28,8 @@ namespace UserInterface.DialogViewModels
 
         }
 
-        private CompanyViewModel _companyViewModel = new CompanyViewModel();
-        public CompanyViewModel CompanyViewModel
+        private CompanyModel _companyViewModel = new CompanyModel();
+        public CompanyModel CompanyViewModel
         {
             get => _companyViewModel;
             set => SetField(ref _companyViewModel, value);
@@ -49,12 +50,12 @@ namespace UserInterface.DialogViewModels
             Company result = _sourceService.Get<Company>(id);
             if(result != null)
             {
-                CompanyViewModel = _mapper.Map<CompanyViewModel>(result);
+                CompanyViewModel = _mapper.Map<CompanyModel>(result);
             }
             else
             {
                 CompanyViewModel.FullName = "";
-                CompanyViewModel.Prices = new ObservableCollection<PriceViewModel>();
+                CompanyViewModel.Prices = new ObservableCollection<PriceModel>();
                 CompanyViewModel.MarketCup = default;
             }
             ((RelayCommand)CreateCommand).NotifyCanExecuteChange();

@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using BaseModels;
+using MvvmWpfFramework.Commands;
+using MvvmWpfFramework.ViewModels;
 using Services.ApplicationServices;
 using Services.DataService;
 using Services.SessionService;
@@ -23,7 +25,7 @@ namespace UserInterface.ViewModels
         IMapper _mapper;
         AddCompanyDialogViewModel _addCompanyDialogViewModel;
 
-        public SessionViewModel SessionViewModel { get; set; }
+        public SessionModel SessionViewModel { get; set; }
 
         public CompanyListFormViewModel(
             IDialogService dialogService,
@@ -50,7 +52,7 @@ namespace UserInterface.ViewModels
         }
         private void Add(object obj)
         {
-            CompanyViewModel companyViewModel = _dialogService.OpenDialog(_addCompanyDialogViewModel);
+            CompanyModel companyViewModel = _dialogService.OpenDialog(_addCompanyDialogViewModel);
             if (companyViewModel != null)
             {
                 SessionViewModel.Companies.Add(companyViewModel);

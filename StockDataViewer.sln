@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAnalyzer", "StockAnalyzer\StockAnalyzer.csproj", "{AB3D1286-763F-453C-AE96-E7292CC1A914}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmWpfFramework", "MvvmWpfFramework\MvvmWpfFramework.csproj", "{48469DE9-A534-464D-920A-1DCC680A97E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AB3D1286-763F-453C-AE96-E7292CC1A914}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB3D1286-763F-453C-AE96-E7292CC1A914}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB3D1286-763F-453C-AE96-E7292CC1A914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48469DE9-A534-464D-920A-1DCC680A97E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48469DE9-A534-464D-920A-1DCC680A97E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48469DE9-A534-464D-920A-1DCC680A97E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48469DE9-A534-464D-920A-1DCC680A97E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

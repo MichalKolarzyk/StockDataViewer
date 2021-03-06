@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UserInterface.Utilities
+namespace MvvmWpfFramework.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {

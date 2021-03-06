@@ -29,9 +29,9 @@ namespace UserInterface.Utilities
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Company, CompanyViewModel>();
-                cfg.CreateMap<Price, PriceViewModel>();
-                cfg.CreateMap<Session, SessionViewModel>();
+                cfg.CreateMap<Company, CompanyModel>();
+                cfg.CreateMap<Price, PriceModel>();
+                cfg.CreateMap<Session, SessionModel>();
             });
 
             return config;
